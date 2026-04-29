@@ -1,5 +1,5 @@
 =================================================
-Uncertainty analysis in experimental measurements
+UNCERTAINTY ANALYSIS IN EXPERIMENTAL MEASUREMENTS
 =================================================
 
 .. toctree::

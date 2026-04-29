@@ -1,5 +1,5 @@
 ====================================
-Demystifying Mann's turbulence model
+DEMYSTIFYING MANN'S TURBULENCE MODEL
 ====================================
 
 .. toctree::
