@@ -1,20 +1,25 @@
 $ Ignoring directories
 
+1984Gato/
 1984Gato/1984Gato.pdf
 1984Gato/Gato.ipynb
 1984Gato/Figs/
 
+1994Mann/
 1994Mann/1994Mann.pdf
 1994Mann/Mann.ipynb
 1994Mann/Mann_mod.ipynb
 
+Mathematical_background/
 Mathematical_background/Figs
 Mathematical_background/Mathematical_background.ipynb
 
+Thermodynamics/
 Thermodynamics/Figs
 Thermodynamics/from_quantum_to_analyticity.ipynb
 Thermodynamics/from_quantum_to_analyticity_mod.ipynb
 
+Wind_tunnel_uncertainty_analysis/
 Wind_tunnel_uncertainty_analysis/Figs
 Wind_tunnel_uncertainty_analysis/linear_uncertainty_propagation_framework.ipynb
 Wind_tunnel_uncertainty_analysis/wind-tunnel_showcase.ipynb
