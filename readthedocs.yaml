@@ -1,0 +1,22 @@
+# .readthedocs.yaml
+
+version: 2
+
+# Build PDF
+#formats:
+#    - pdf
+    
+build:
+    os: ubuntu-24.04
+    tools:
+        python: "3.9"
+        nodejs: "22"
+
+# Build settings
+sphinx:
+  configuration: source/conf.py  # Change to the location of your conf.py  
+
+# Python settings
+python:
+  install:
+    - requirements: requirements.txt
