@@ -209,7 +209,7 @@ The uncertainty budgets that follow should therefore be read as the quantitative
 
 :::{table}
 :width: 100%
-:widths: 25 25 25 25
+:widths: 33.33 33.33 33.33
 :class: wrapped-table
 
 | Quantity | Expression | Partial derivatives / sensitivities |
