@@ -128,6 +128,11 @@ The uncertainty budgets that follow should therefore be read as the quantitative
 (synthesized_uncertainty_table)=
 ### Synthesized uncertainty table
 
+:::{table}
+:width: 100%
+:widths: 14.2857 14.2857 14.2857 14.2857 14.2857 14.2857 14.2857
+:class: wrapped-table
+
 | Quantity | Symbol | Nature | Definition / Expression / Computation | Bias-related standard uncertainty term $u_B$ or correction info | Random term from time series | Quantity-level expression to propagate |
 | - | -: | - | - | - | - | - |
 | Angle of attack | $\alpha$ | Basic | Consigned | $u_{B,\alpha}=2.89{\cdot}10^{-3}\ ^\circ = 5.038{\cdot}10^{-5} \mathrm{rad}$ | $0$ | $u_{B,\alpha}=2.89\times10^{-3}\ ^\circ$ |
@@ -153,8 +158,15 @@ The uncertainty budgets that follow should therefore be read as the quantitative
 | Lift coefficient | $c_l$ | Derived | $c_l=\dfrac{c_y-c_d\sin\alpha}{\cos\alpha}$ | $u_{B,c_l}=\sqrt{\left(\frac{\partial c_{l}}{\partial c_{y}}u_{B,c_y}\right)^2+\left(\frac{\partial c_{l}}{\partial c_{d}}u_{B,c_d}\right)^2+\left(\frac{\partial c_{l}}{\partial \alpha}u_{B,\alpha}\right)^2}$ | $\hat{\sigma}_{c_l,\mathrm{corr.}}=\sqrt{\left(\frac{\partial c_{l}}{\partial c_{y}}\hat{\sigma}_{c_y,\mathrm{corr.}}\right)^2+\left(\frac{\partial c_{l}}{\partial c_{d}}\hat{\sigma}_{c_d,\mathrm{corr.}}\right)^2}$ | $u_{c_l}=\sqrt{u_{B,c_l}^2+\hat{\sigma}_{c_l,\mathrm{corr.}}^2}$ |
 | Aerodynamic efficiency | $E$ | Derived | $E=\dfrac{c_l}{c_d}$ | $u_{B,E}=\sqrt{\left(\frac{\partial E}{\partial c_l}u_{B,c_l}\right)^2+\left(\frac{\partial E}{\partial c_d}u_{B,c_d}\right)^2}$ | $\hat{\sigma}_{E,\mathrm{corr.}}=\sqrt{\left(\frac{\partial E}{\partial c_l}\hat{\sigma}_{c_l,\mathrm{corr.}}\right)^2+\left(\frac{\partial E}{\partial c_d}\hat{\sigma}_{c_d,\mathrm{corr.}}\right)^2}$ | $u_E=\sqrt{u_{B,E}^2+\hat{\sigma}_{E,\mathrm{corr.}}^2}$ |
 
+:::
+
 (constraints_on_uncertainty_values)=
 ### Constraints on the uncertainty values
+
+:::{table}
+:width: 100%
+:widths: 20 20 20 20 20
+:class: wrapped-table
 
 | Basic measurand | Uncertainty term/correction | Full calibration-related information | Available information/constraints applicable | Final, definite value(s) used |
 | - | - | - | - | - |
@@ -190,8 +202,15 @@ The uncertainty budgets that follow should therefore be read as the quantitative
 | | $u_{B,c_{d},\mathrm{num.}}$ | - The most practical and defensible estimate is to compare the adopted quadrature (Simpson-based) with a second, independent numerical evaluation of the same corrected data.<br/><br/> - The trapezoidal quadrature rule is adopted as the independent evaluation mode. | - Define:<br/> $\displaystyle{\qquad \Delta_{\mathrm{num.}}=\left\|c_{d}^{\mathrm{Simpson}} - c_{d}^{\mathrm{Trap.}}\right\|}$<br/><br/> - Interpret such a difference as a bound with unknown sign, so that a standard rectangular-distribution-based treatment arises, i.e.:<br/> $\displaystyle{\qquad u_{B,c_{d},\mathrm{num.}} = \frac{\Delta_{\mathrm{num.}}}{\sqrt{3}}}$ | $\displaystyle{u_{B,c_{d},\mathrm{num.}} = \frac{\Delta_{\mathrm{num.}}}{\sqrt{3}}}$ |
 | | $S_{y}\left[g_{i}\right]$ | - This term is the numerical-integration/discretization of the wake-rake reduction itself. The straightforward quantity to integrate is:<br/> $\qquad g_{i} = \sqrt{\frac{2q_{i}}{\rho}\left(\overline{V} - \sqrt{\frac{2q_{i}}{\rho}}\right)}$<br/> $\qquad c_{d}=\frac{2}{c\overline{V}^{2}}S_{y}\left[g_{i}\right]$ | $\displaystyle{\mathcal S_y\left[g_i\right]=\mathcal S_{1/3}\left[g_i\right] + \mathcal S_{3/8}\left[g_i\right]}$<br/> $\displaystyle{\qquad \qquad \mathcal S_{1/3}\left[g_i\right]=\frac{\Delta y}{3}\left[g_1 + g_{61}+4\sum_{j=2,4,\dots,60} g_j+2\sum_{j=3,5,\dots,59} g_j\right]}$<br/> $\displaystyle{\qquad \qquad \mathcal S_{3/8}\left[g_i\right]=\frac{3\Delta y}{8}\left[g_{61}+3g_{62}+3g_{63}+g_{64}\right]}$ | $\displaystyle{\mathcal S_y\left[g_i\right]=\frac{\Delta y}{3}\left[g_1 + g_{61}+4\sum_{j=2,4,\dots,60} g_j+2\sum_{j=3,5,\dots,59} g_j\right]+\frac{3\Delta y}{8}\left[g_{61}+3g_{62}+3g_{63}+g_{64}\right]}$ |
 
+:::
+
 (sensitivity_coefficients)=
 ### Gathered table of partial derivatives / sensitivity coefficients
+
+:::{table}
+:width: 100%
+:widths: 25 25 25 25
+:class: wrapped-table
 
 | Quantity | Expression | Partial derivatives / sensitivities |
 | - | - | - |
@@ -209,3 +228,5 @@ The uncertainty budgets that follow should therefore be read as the quantitative
 | Drag coefficient | $\displaystyle{c_d=\frac{2}{c\overline{V}^{2}}\sum_{i=1}^{64}w_i g_i=\frac{2I}{c\overline{V}^{2}},\qquad I=\sum_{i=1}^{64}w_i g_i}$ | $\displaystyle{\frac{\partial c_d}{\partial q_i}=\frac{2w_i}{c\overline{V}^{2}}\frac{\partial g_i}{\partial q_i}}$<br/><br/> $\displaystyle{\frac{\partial c_d}{\partial \rho}=\frac{2}{c\overline{V}^{2}}\sum_{i=1}^{64}w_i\frac{\partial g_i}{\partial \rho}}$<br/><br/> $\displaystyle{\frac{\partial c_d}{\partial \overline{V}}=\frac{2}{c\overline{V}^{2}}\sum_{i=1}^{64}w_i u_i-\frac{4I}{c\overline{V}^{3}}}$<br/><br/> $\displaystyle{\frac{\partial c_d}{\partial c}=-\frac{2I}{c^{2}\overline{V}^{2}}=-\frac{c_d}{c}}$ |
 | Lift coefficient | $\displaystyle{c_l=\frac{c_y-c_d\sin\alpha}{\cos\alpha}=c_y\sec\alpha-c_d\tan\alpha}$ | $\displaystyle{\frac{\partial c_l}{\partial c_y}=\sec\alpha}$<br/><br/> $\displaystyle{\frac{\partial c_l}{\partial c_d}=-\tan\alpha}$<br/><br/> $\displaystyle{\frac{\partial c_l}{\partial \alpha}=c_y\sec\alpha\tan\alpha-c_d\sec^{2}\alpha}$ |
 | Aerodynamic efficiency | $\displaystyle{E=\frac{c_l}{c_d}}$ | $\displaystyle{\frac{\partial E}{\partial c_l}=\frac{1}{c_d}}$<br/><br/> $\displaystyle{\frac{\partial E}{\partial c_d}=-\frac{c_l}{c_d^{2}}=-\frac{E}{c_d}}$ |
+
+:::
