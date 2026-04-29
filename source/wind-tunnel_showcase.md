@@ -1,10 +1,10 @@
 (wind_tunnel_showcase_measurement_chain)=
-## Wind-tunnel showcase
+# Wind-tunnel showcase
 
 The generic uncertainty framework introduced so far is now specialized to the wind-tunnel campaign considered in the present document. The purpose of this section is not yet to develop the uncertainty tables themselves, but to describe the experimental protocol in terms that are directly compatible with them. In particular, the aim is to identify the measurement chain, the quantities that are directly read from the instrumentation, the quantities that are subsequently derived from those readings, and the way in which the recorded time series are converted into the representative values employed in the uncertainty budget.
 
 (experimental_facility_and_model)=
-### Experimental facility and model arrangement
+## Experimental facility and model arrangement
 
 The experiments are carried out in an open-circuit, low-turbulence wind tunnel driven by a 37 kW fan. The test section has a rectangular cross-section of $0.75\times1\ \mathrm{m}^2$ and a length of $3\ \mathrm{m}$, allowing freestream velocities of up to approximately $40\ \mathrm{m/s}$ while maintaining background turbulence levels below $0.2\%$. These characteristics make the facility suitable for steady aerodynamic measurements in the low-to-moderate Reynolds-number range.
 
@@ -31,7 +31,7 @@ These geometric quantities enter explicitly into the definition of the derived n
 The angle of attack of the model is prescribed through a stepper-motor-driven rotary plate. Accordingly, the angle of attack $\alpha$ is treated as a basic measurand of the campaign, in the sense that it is imposed by the positioning system and subsequently used as an input variable in the reduction of the aerodynamic coefficients.
 
 (measurement_chain_and_acquisition_protocol)=
-### Measurement chain and acquisition protocol
+## Measurement chain and acquisition protocol
 
 The experimental campaign is conceived as a sequence of steady operating points. For each prescribed angle of attack, the tunnel is set to the target condition, the model incidence is adjusted through the rotary plate, the flow is allowed to stabilize, and the relevant channels are then recorded over a fixed acquisition window. In the present protocol, a stabilization time of $5\ \mathrm{s}$ is allowed after each angular adjustment, and the subsequent acquisition window has a duration of $60\ \mathrm{s}$ for all channels. The purpose of this procedure is to ensure that each operating point can be treated as a statistically steady configuration, so that the representative values of the measurands are given by the means of the corresponding time series.
 
@@ -154,7 +154,7 @@ The uncertainty budgets that follow should therefore be read as the quantitative
 | Aerodynamic efficiency | $E$ | Derived | $E=\dfrac{c_l}{c_d}$ | $u_{B,E}=\sqrt{\left(\frac{\partial E}{\partial c_l}u_{B,c_l}\right)^2+\left(\frac{\partial E}{\partial c_d}u_{B,c_d}\right)^2}$ | $\hat{\sigma}_{E,\mathrm{corr.}}=\sqrt{\left(\frac{\partial E}{\partial c_l}\hat{\sigma}_{c_l,\mathrm{corr.}}\right)^2+\left(\frac{\partial E}{\partial c_d}\hat{\sigma}_{c_d,\mathrm{corr.}}\right)^2}$ | $u_E=\sqrt{u_{B,E}^2+\hat{\sigma}_{E,\mathrm{corr.}}^2}$ |
 
 (constraints_on_uncertainty_values)=
-## Constraints on the uncertainty values
+### Constraints on the uncertainty values
 
 | Basic measurand | Uncertainty term/correction | Full calibration-related information | Available information/constraints applicable | Final, definite value(s) used |
 | - | - | - | - | - |
@@ -191,7 +191,7 @@ The uncertainty budgets that follow should therefore be read as the quantitative
 | | $S_{y}\left[g_{i}\right]$ | - This term is the numerical-integration/discretization of the wake-rake reduction itself. The straightforward quantity to integrate is:<br/> $\qquad g_{i} = \sqrt{\frac{2q_{i}}{\rho}\left(\overline{V} - \sqrt{\frac{2q_{i}}{\rho}}\right)}$<br/> $\qquad c_{d}=\frac{2}{c\overline{V}^{2}}S_{y}\left[g_{i}\right]$ | $\displaystyle{\mathcal S_y\left[g_i\right]=\mathcal S_{1/3}\left[g_i\right] + \mathcal S_{3/8}\left[g_i\right]}$<br/> $\displaystyle{\qquad \qquad \mathcal S_{1/3}\left[g_i\right]=\frac{\Delta y}{3}\left[g_1 + g_{61}+4\sum_{j=2,4,\dots,60} g_j+2\sum_{j=3,5,\dots,59} g_j\right]}$<br/> $\displaystyle{\qquad \qquad \mathcal S_{3/8}\left[g_i\right]=\frac{3\Delta y}{8}\left[g_{61}+3g_{62}+3g_{63}+g_{64}\right]}$ | $\displaystyle{\mathcal S_y\left[g_i\right]=\frac{\Delta y}{3}\left[g_1 + g_{61}+4\sum_{j=2,4,\dots,60} g_j+2\sum_{j=3,5,\dots,59} g_j\right]+\frac{3\Delta y}{8}\left[g_{61}+3g_{62}+3g_{63}+g_{64}\right]}$ |
 
 (sensitivity_coefficients)=
-## Gathered table of partial derivatives / sensitivity coefficients
+### Gathered table of partial derivatives / sensitivity coefficients
 
 | Quantity | Expression | Partial derivatives / sensitivities |
 | - | - | - |

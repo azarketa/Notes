@@ -1,5 +1,5 @@
 (linear_uncertainty_propagation_framework)=
-## Linear uncertainty propagation framework
+# Linear uncertainty propagation framework
 
 The purpose of this internal document is to provide the theoretical foundations and the practical framework required to undertake an uncertainty analysis on a set of experimental measurements. Although uncertainty quantification is an essential part of any sound experimental methodology, it is often treated as a secondary task in day-to-day laboratory practice, where the main attention is usually devoted to instrumentation, acquisition, and post-processing. As a result, many measurement campaigns yield mean values, trends, and performance indicators without a sufficiently explicit assessment of how reliable those reported quantities are. The aim of the present document is to address that gap by presenting a structured route from the recorded signals to the corresponding uncertainty estimates.
 
@@ -507,7 +507,7 @@ So despite having $60000$ raw samples, the relevant information for estimating t
 
 The figure below shows the first 2 seconds of the mentioned raw time signal of 60 seconds sampled at a frequency of 1000 Hz.
 
-:::{figure} Figs/01_raw_time_signal.svg
+:::{figure} Figs_uncertainty/01_raw_time_signal.svg
 :name: fig-raw-time-signal
 :width: 85%
 :align: center
@@ -516,7 +516,7 @@ First 2 seconds of a raw time signal of 60 seconds sampled at a frequency of 100
 
 Upon such a figure, computing the normalized autocorrelation provides the shape shown in the illustration below. The shaded area corresponds to the integral time scale $\tau_{\mathrm{int},x}$.
 
-:::{figure} Figs/02_normalized_autocorrelation.svg
+:::{figure} Figs_uncertainty/02_normalized_autocorrelation.svg
 :name: fig-normalized-autocorrelation
 :width: 85%
 :align: center
@@ -525,7 +525,7 @@ Normalized autocorrelation function of the above signal, with the shaded area sh
 
 Based on such a $\tau_{\mathrm{int},x}$ value, the original 2-seconds-long time series can be chunked into pieces of $2\tau_{\mathrm{int},x}$, namely the statistically independent data chunks. Such a division is shown in the figure below.
 
-:::{figure} Figs/03_chunked_signal.svg
+:::{figure} Figs_uncertainty/03_chunked_signal.svg
 :name: fig-chunked-signal
 :width: 85%
 :align: center
@@ -600,7 +600,7 @@ It is nevertheless useful to anticipate that the same probability models will la
 
 This distinction is illustrated in the figure below, where the Gaussian, rectangular, and triangular distributions are shown together with their standard uncertainties and central 95\% coverage intervals. The figure makes visually clear that a factor such as $\sqrt{3}$ or $\sqrt{6}$ is not, in itself, a generic 95\% coverage factor. Rather, it is the factor that converts a bounded interval into the associated standard uncertainty under a given distributional assumption.
 
-:::{figure} Figs/04_distributions_coverage_factors.svg
+:::{figure} Figs_uncertainty/04_distributions_coverage_factors.svg
 :name: fig-chunked-signal
 :width: 85%
 :align: center
